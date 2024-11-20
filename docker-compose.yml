@@ -1,0 +1,13 @@
+services:
+    app:
+        container_name: player-service-app
+        build:
+            context: player-service-app/
+            dockerfile: Dockerfile
+        environment:
+        - FLASK_ENV=development
+        - FLASK_APP=/app.py
+        - DATABASE=/player.db
+        ports:
+        - 8001:8001
+        
