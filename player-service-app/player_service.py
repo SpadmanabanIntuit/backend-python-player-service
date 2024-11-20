@@ -8,9 +8,9 @@ class PlayerService:
         self.cursor = conn.cursor()
         self.columns = self.get_columns()
 
-    def get_all_players(self):
+    def get_all_players(self, limit="10"):
 
-        query = "SELECT * FROM players"
+        query = f"SELECT * FROM players LIMIT {limit}"
         result = self.cursor.execute(query).fetchall()
         players = []
         for row in result:
